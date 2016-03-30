@@ -12,7 +12,9 @@
 <body class="prevent-click">
 
 <div class="spinner">
-    loading...
+    <div class="loader">
+      Loading...
+    </div>
 </div>
 
 <div class="container" id="header">
@@ -31,7 +33,7 @@
 </script>
 
 <script type="text/template" id="pokemonTypeTemplate">
-    <p></p>
+    <span><span>
 </script>
 
 <script type="text/template" id="pokemonPopupTemplate">
@@ -43,17 +45,30 @@
         </div>
         <div class="modal-body">
             <img src="" alt="">
-            <ul class="stats">
-                <li class="types"></li>
-                <li class="attack"></li>
-                <li class="defense"></li>
-                <li class="hp"></li>
-                <li class="sp_atk"></li>
-                <li class="sp_def"></li>
-                <li class="speed"></li>
-                <li class="weight"></li>
-                <li class="total_moves"></li>
-            </ul>
+            <table class="stats" align="center">
+              <tr id="stat_head_row">
+                <td>Types</td>
+                <td>Attack</td>
+                <td>Defense</td>
+                <td>HP</td>
+                <td>SP Attack</td>
+                <td>SP Defense</td>
+                <td>Speed</td>
+                <td>Weight</td>
+                <td>Total moves</td>
+              </tr>
+              <tr>
+                <td class="types"></td>
+                <td class="attack"></td>
+                <td class="defense"></td>
+                <td class="hp"></td>
+                <td class="sp_atk"></td>
+                <td class="sp_def"></td>
+                <td class="speed"></td>
+                <td class="weight"></td>
+                <td class="total_moves"></td>
+              </tr>
+            </table>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

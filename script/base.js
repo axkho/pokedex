@@ -1,6 +1,6 @@
 var domainName = "http://pokeapi.co",
     pokemonUrl = "/api/v1/pokemon/",
-    defaultUrl = "/api/v1/pokemon/?limit=2";
+    defaultUrl = "/api/v1/pokemon/?limit=10";
 
 $(document).ready(function () {
     getPokemons();
@@ -70,7 +70,7 @@ var getPokemon = function (pokemon) {
             var $pokemonPopup = getTemplate("pokemonPopupTemplate");
 
             $pokemonPopup.find(".name").html(data.name);
-
+            $pokemonPopup.find("img").attr("src", "http://pokeapi.co/media/img/" + data.pkdx_id + ".png");
             /*Object.keys(data).forEach(function (key) {
              var stat = data[key],
              $el = $pokemonPopup.find(".stats ." + key);
@@ -95,7 +95,7 @@ var getPokemon = function (pokemon) {
             $("#myModal .modal-dialog").html($pokemonPopup);
 
             $('#myModal').modal("toggle");
-            
+
             togglePreventClick(false);
         });
 };
