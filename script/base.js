@@ -1,6 +1,7 @@
 var domainName = "http://pokeapi.co",
     pokemonUrl = "/api/v1/pokemon/",
-    defaultUrl = "/api/v1/pokemon/?limit=22";
+    defaultUrl = "/api/v1/pokemon/?limit=36";
+
 
 $(document).ready(function () {
     var $pokemonsContainer = $("#pokemonsContainer");
@@ -25,22 +26,27 @@ $(document).ready(function () {
 
     $pokemonsContainer.on("click", ".tp", function (element) {
         var type = $(element.target).attr("data-type");
-
-        $pokemonsContainer.find(".pokemonContainer:not(:has([data-type=" + type + "]))").hide();
+        $("#filters .row").fadeIn("fast");
+        if(!$("#f_types").is("span:has([data-type="+type+"])")) {
+          $(this).clone().appendTo("#f_types");
+        }
+        $pokemonsContainer.find(".pokemonContainer:not(:has([data-type=" + type + "]))").fadeOut("fast");
     });
 
     // onclick display all
-    $("#logo").on("click", function () {
+    $("#clearFilters").on("click", function () {
         showAll();
     });
 });
 
 var showAll = function () {
-    $("#pokemonsContainer").find(".pokemonContainer").show();
+  $("#f_types").empty();
+  $("#filters .row").hide();
+  $("#pokemonsContainer").find(".pokemonContainer").fadeIn("fast");
 };
 
 var togglePreventClick = function (add) {
-    $("body").toggleClass("prevent-click", add);
+  $("body").toggleClass("prevent-click", add);
 };
 
 var getPokemons = function (url) {

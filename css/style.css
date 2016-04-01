@@ -8,6 +8,24 @@ h1 {
   padding-top: 25px;
 }
 
+#filters {
+  height: 30px;
+  width: 20%;
+  margin-left: 140px;
+  font-family: 'Open Sans';
+}
+#filters > .row {
+  display: none;
+}
+
+#clearFilters {
+  float: right;
+  border-radius: 60px;
+  border-style: none;
+  box-shadow: 1px 1px 2px;
+  font-weight: bolder;
+}
+
 #btn {
   text-align: center;
   clear: both;
@@ -29,7 +47,7 @@ h1 {
 #pokemonsContainer {
   list-style: none;
   margin: auto;
-  padding: 0;
+  padding: 0 40px;
 }
 
 .pokemonContainer {
@@ -43,7 +61,6 @@ h1 {
 
 .pokemonContainer img:hover {
   cursor: pointer;
-  /*margin-bottom: 2px;*/
   box-shadow: 2px 0px 2px;
 }
 
@@ -220,8 +237,4 @@ h1 {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-
-#logo {
-  cursor: pointer;
 }
