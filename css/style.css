@@ -192,6 +192,12 @@ h1 {
   height: 100%;
   display: none;
 }
+.spinner > img {
+  margin: 150px auto;
+  position: relative;
+  width: 20em;
+  height: 20em;
+}
 
 .prevent-click .spinner {
   display: block;
