@@ -1,6 +1,15 @@
-h1 {
-  font-family: 'Roboto' !important;
+@font-face {
+  font-family: PokemonSolid;
+  src: url('fonts/Pokemon Solid.ttf');
+}
+
+#logo {
+  font-family: PokemonSolid !important;
   font-weight: bolder !important;
+  color: #FFCB05 !important;
+  font-size: 4em !important;
+  text-shadow: -3px 0 #2A70B7, 0 3px #2A70B7, 1px 0 #2A70B7, 0 -1px #2A70B7;
+  cursor: default;
 }
 
 #header {
