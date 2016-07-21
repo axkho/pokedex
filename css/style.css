@@ -2,6 +2,10 @@
   font-family: PokemonSolid;
   src: url('fonts/Pokemon Solid.ttf');
 }
+@font-face {
+  font-family: AndyBold;
+  src: url('fonts/Andy Bold.ttf');
+}
 
 #logo {
   font-family: PokemonSolid !important;
@@ -11,10 +15,54 @@
   text-shadow: -3px 0 #2A70B7, 0 3px #2A70B7, 1px 0 #2A70B7, 0 -1px #2A70B7;
   cursor: default;
 }
+#knowEmAll {
+  font-family: AndyBold !important;
+  font-size: 2em !important;
+  color: white;
+  text-shadow: -2px 0 #2A70B7, 0 2px #2A70B7, 1px 0 #2A70B7, 0 -1px #2A70B7;
+  cursor: default;
+}
 
 #header {
   text-align: center;
   padding-top: 25px;
+}
+
+#searchField {
+  padding: 20px;
+  padding-left: 0;
+  margin-left: 140px;
+  font-family: 'Open Sans';
+}
+#searchInput {
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #F1F1F1;
+}
+#searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 3pt 2pt rgba(42, 112, 183, 0.8);
+}
+#searchButton {
+  margin-left: 5px;
+  border : solid 0px #ffffff;
+	border-radius : 13px 3px 12px 0px ;
+	moz-border-radius : 13px 3px 12px 0px ;
+	-webkit-box-shadow : 1px 0px 5px rgba(0,0,0,0.7);
+	-moz-box-shadow : 1px 0px 5px rgba(0,0,0,0.7);
+	box-shadow : 1px 0px 5px rgba(0,0,0,0.7);
+	font-size : 20px;
+	color : #ffffff;
+	padding : 1px 17px;
+	background-color : #039be5;
+}
+#searchButton:focus {
+  outline: none;
+}
+#searchError, #emptySearchError {
+  color: red;
+  font-size: 0.9em;
+  display: none;
 }
 
 #filters {

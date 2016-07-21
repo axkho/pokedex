@@ -23,7 +23,7 @@ $(document).ready(function () {
 
         getPokemon(url);
     });
-
+    //filter
     $pokemonsContainer.on("click", ".tp", function (element) {
         var type = $(element.target).attr("data-type");
         $("#filters .row").fadeIn("fast");
@@ -33,11 +33,29 @@ $(document).ready(function () {
         $pokemonsContainer.find(".pokemonContainer:not(:has([data-type=" + type + "]))").fadeOut("fast");
     });
 
+    //search
+    $("#pokemonSearchForm").submit(function(event){
+      var $searchInputVal = $("#searchInput").val();
+      event.preventDefault();
+      if($searchInputVal !== ""){
+        searchPokemon($searchInputVal);
+      } else {
+        $("#emptySearchError").css("display", "block");
+      }
+    });
+
     // onclick display all
     $("#clearFilters").on("click", function () {
         showAll();
     });
 });
+
+var searchPokemon = function(pokemonName) {
+  pokemonName = pokemonName.toLowerCase();
+  var url = pokemonUrl + pokemonName;
+  togglePreventClick(true);
+  getPokemon(url);
+};
 
 var showAll = function () {
   $("#f_types").empty();
@@ -108,7 +126,16 @@ var getPokemon = function (pokemon) {
 
             $("#myModal").modal("toggle");
 
-            togglePreventClick(false);
+            $("#searchError").css("display", "none");
+            $("#emptySearchError").css("display", "none");
+            $("#searchInput").val("");
+        })
+        .fail(function(){
+          $("#emptySearchError").css("display", "none");
+          $("#searchError").css("display", "block");
+        })
+        .always(function(){
+          togglePreventClick(false);
         });
 };
 

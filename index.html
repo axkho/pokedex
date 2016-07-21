@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="discription" content="pokedex">
+    <meta name="author" content="a.khomenko@protonmail.com">
+
     <title>A Simple Pokedex</title>
+
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <link rel="icon" href="img/favicon.ico">
+
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="script/base.js"></script>
@@ -23,7 +30,21 @@
 <div class="container" id="header">
     <div class="row">
         <h1 id="logo">Pokedex</h1>
+        <h2 id="knowEmAll">Gotta Know 'Em All</h2>
     </div>
+</div>
+<!-- search and filters -->
+<div class="container" id="searchField">
+  <div class="row">
+    <div class="col-md-12">
+      <form name="pokemonSearchForm" id="pokemonSearchForm">
+        <input id="searchInput" type="search" placeholder="Who's that Pokemon?">
+        <input id="searchButton" type="submit" value="Search">
+      </form>
+      <span id="searchError">There's no Pokemon by that name :(</span>
+      <span id="emptySearchError">Please enter pokemon name</span>
+    </div>
+  </div>
 </div>
 <div class="container" id="filters">
   <div class="row">
