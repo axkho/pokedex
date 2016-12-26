@@ -30,8 +30,8 @@
 
 #searchField {
   padding: 20px;
-  padding-left: 0;
-  margin-left: 140px;
+  padding-left: 80px;
+  margin: auto;
   font-family: 'Open Sans';
 }
 #searchInput {
